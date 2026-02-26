@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold UZB LLC | Premium Truck Dispatching Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #b8860b 0%, #f7d774 50%, #b8860b 100%);
+            --bg-dark: #0A0A0A;
+            --bg-card: #161616;
+            --text-light: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --accent-glow: rgba(212, 175, 55, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px; /* Wider container for premium feel */
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        /* Navigation Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        nav {
+            height: 110px; /* Increased height to accommodate a larger logo */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .logo-img {
+            height: 85px; /* Significantly larger logo */
+            width: auto;
+            object-fit: contain;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .logo-img:hover {
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-gold);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-gold);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Sections */
+        section {
+            padding: 160px 0 120px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .section-title .divider {
+            height: 5px;
+            width: 100px;
+            background: var(--gold-gradient);
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2070') center/cover;
+            padding-top: 110px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 3.5rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(212, 175, 55, 0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            background: rgba(22, 22, 22, 0.9);
+        }
+
+        .card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary-gold);
+            font-size: 1.6rem;
+        }
+
+        /* Contact Form */
+        .form-card {
+            background: var(--bg-card);
+            padding: 5rem;
+            border-radius: var(--radius);
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1.3rem;
+            margin-bottom: 1.8rem;
+            background: #0f0f0f;
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-gold);
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 6rem 0 4rem;
+            background: #050505;
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 100px;
+            margin-bottom: 2rem;
+            object-fit: contain;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links { gap: 1.5rem; }
+            .hero-content h1 { font-size: 3.5rem; }
+            nav { height: 100px; }
+            .logo-img { height: 75px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-dark);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                text-align: center;
+                border-bottom: 2px solid var(--primary-gold);
+            }
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+            nav { height: 90px; }
+            .logo-img { height: 65px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo-container" onclick="navigate('home')">
+                    <!-- Increased height for a more prominent logo -->
+                    <img src="logo.svg" alt="Gold UZB LLC Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <!-- Text fallback styled to look like the referenced professional logo -->
+                    <div style="display:none; text-align: left;">
+                        <span class="brand-font" style="font-size: 1.8rem; color: #fff; font-weight: 800; line-height: 1;">GOLD <span style="color: var(--primary-gold)">UZB</span></span>
+                        <div style="height: 2px; background: var(--gold-gradient); width: 100%; margin-top: 4px;"></div>
+                        <span style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 3px; text-transform: uppercase;">Logistics Solutions</span>
+                    </div>
+                </a>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" onclick="navigate('home')" class="nav-item active">Home</a>
+                    <a href="#about" onclick="navigate('about')" class="nav-item">About</a>
+                    <a href="#services" onclick="navigate('services')" class="nav-item">Services</a>
+                    <a href="#fleet" onclick="navigate('fleet')" class="nav-item">Fleet</a>
+                    <a href="#careers" onclick="navigate('careers')" class="nav-item">Careers</a>
+                    <a href="#contact" onclick="navigate('contact')" class="nav-item">Contact</a>
+                </div>
+
+                <button class="mobile-toggle" id="menuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="active">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gold Standard <br> Dispatching Solutions</h1>
+                <p>
+                    Gold UZB LLC provides elite dispatching services designed for owner-operators and fleets who demand excellence, transparency, and maximum profitability.
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <a href="#contact" onclick="navigate('contact')" class="btn btn-gold">Join Our Fleet</a>
+                    <a href="#services" onclick="navigate('services')" class="btn btn-outline">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: center;">
+                <div style="background: var(--bg-card); padding: 4rem; border-radius: var(--radius); border-left: 8px solid var(--primary-gold);">
+                    <h3 style="color: #fff; margin-bottom: 2rem;">A Legacy of Success in Freight</h3>
+                    <p style="margin-bottom: 2rem; font-size: 1.2rem; color: var(--text-light);">Gold UZB LLC stands at the intersection of technology and industry expertise. Our dispatchers are trained to think like business owners, focusing not just on the next load, but on your overall business sustainability.</p>
+                    <p>We pride ourselves on 24/7 availability and direct communication. When you drive with Gold UZB, you're never alone on the road.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="display: inline-block; padding: 3rem; border: 3px solid var(--primary-gold); border-radius: 50%; background: var(--accent-glow);">
+                        <span style="font-size: 5rem; font-weight: 800; color: var(--primary-gold);">10+</span>
+                    </div>
+                    <p style="margin-top: 2rem; font-weight: 700; font-size: 1.6rem; color: #fff; text-transform: uppercase;">Professional Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Services</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Strategic Booking</h3>
+                    <p>We leverage real-time market data to book the highest-paying loads in the most efficient lanes for your specific equipment.</p>
+                </div>
+                <div class="card">
+                    <h3>Expert Negotiation</h3>
+                    <p>Our team doesn't just take the first offer. We push brokers to the limit to ensure you get the rate your hard work deserves.</p>
+                </div>
+                <div class="card">
+                    <h3>Full Admin Support</h3>
+                    <p>From carrier packets to insurance certificates and invoicing, we handle the paperwork so you can focus on safe driving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLEET SECTION -->
+    <section id="fleet">
+        <div class="container">
+            <div class="section-title">
+                <h2>Equipment Focus</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📦</div>
+                    <h3>Dry Van</h3>
+                    <p>Optimized nationwide routing for 53ft trailers with consistent load volume.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">❄️</div>
+                    <h3>Reefer</h3>
+                    <p>High-precision dispatching for temperature-sensitive cargo and specialized shippers.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🏗️</div>
+                    <h3>Flatbed</h3>
+                    <p>Specialized handling for heavy-haul, over-dimensional, and construction freight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section id="careers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grow With Us</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="grid">
+                <div class="card" style="border-top: 6px solid var(--primary-gold);">
+                    <h3>Owner-Operators</h3>
+                    <p>Tired of low rates and bad communication? Switch to Gold UZB and see the difference in your weekly settlement.</p>
+                    <button class="btn btn-gold" style="margin-top: 2.5rem; width: 100%;" onclick="navigate('contact')">Apply Now</button>
+                </div>
+                <div class="card">
+                    <h3>Dispatch Talent</h3>
+                    <p>Join a high-performance office environment with competitive commissions and modern logistics tools.</p>
+                    <button class="btn btn-outline" style="margin-top: 2.5rem; width: 100%;" onclick="navigate('contact')">Join Office</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request a Quote</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="form-card">
+                <form id="mainContactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <select required>
+                        <option value="" disabled selected>Select Your Equipment</option>
+                        <option>53' Dry Van</option>
+                        <option>53' Reefer</option>
+                        <option>Flatbed / Step-Deck</option>
+                        <option>Box Truck (26')</option>
+                        <option>Hotshot</option>
+                        <option>Other / Fleet</option>
+                    </select>
+                    <textarea rows="6" placeholder="Describe your business needs or current lanes..."></textarea>
+                    <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1.2rem; padding: 1.5rem;">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <!-- Large Footer Logo -->
+            <img src="logo.svg" alt="Gold UZB Footer Logo" class="footer-logo" onerror="this.style.display='none';">
+
+            <p class="brand-font" style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 15px;">Gold UZB LLC</p>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem;">
+                Setting the gold standard in truck dispatching and logistics management across North America.
+            </p>
+
+            <div style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 3rem;">
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">Instagram</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">Telegram</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">LinkedIn</a>
+            </div>
+
+            <p style="font-size: 0.95rem; color: #444; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;">
+                &copy; 2024 Gold UZB LLC. Registered Transportation Management. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Logic
+        function navigate(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            // Show selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Update Nav item active state
+            document.querySelectorAll('.nav-item').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick').includes(`'${sectionId}'`)) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Form Submission Handler
+        document.getElementById('mainContactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your request has been sent! One of our senior dispatchers will reach out to you within the next hour.');
+            e.target.reset();
+        });
+
+        // Handle URL Hash on load for deep linking
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                navigate(hash);
+            }
+        });
+    </script>
+</body>
+</html>

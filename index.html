@@ -1,562 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Gold UZB LLC | Premium Truck Dispatching Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-gold: #D4AF37;
-            --gold-gradient: linear-gradient(135deg, #b8860b 0%, #f7d774 50%, #b8860b 100%);
-            --bg-dark: #0A0A0A;
-            --bg-card: #161616;
-            --text-light: #F5F5F5;
-            --text-muted: #A0A0A0;
-            --accent-glow: rgba(212, 175, 55, 0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 12px;
-        }
 
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap"
+            rel="stylesheet"
+    />
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .brand-font {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 1400px; /* Wider container for premium feel */
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-        }
-
-        .btn-gold {
-            background: var(--gold-gradient);
-            color: #000;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(184, 134, 11, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-gold);
-            color: var(--primary-gold);
-        }
-
-        /* Navigation Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        nav {
-            height: 110px; /* Increased height to accommodate a larger logo */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            height: 100%;
-        }
-
-        .logo-img {
-            height: 85px; /* Significantly larger logo */
-            width: auto;
-            object-fit: contain;
-            transition: var(--transition);
-            display: block;
-        }
-
-        .logo-img:hover {
-            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: var(--transition);
-            position: relative;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-gold);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gold-gradient);
-            border-radius: 2px;
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--primary-gold);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        /* Sections */
-        section {
-            padding: 160px 0 120px;
-            display: none;
-        }
-
-        section.active {
-            display: block;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-title h2 {
-            font-size: 3rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .section-title .divider {
-            height: 5px;
-            width: 100px;
-            background: var(--gold-gradient);
-            margin: 15px auto;
-            border-radius: 5px;
-        }
-
-        /* Hero Section */
-        #home {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=2070') center/cover;
-            padding-top: 110px;
-        }
-
-        .hero-content h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 800px;
-        }
-
-        /* Grid Layout */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-        }
-
-        .card {
-            background: var(--bg-card);
-            padding: 3.5rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(212, 175, 55, 0.05);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            border-color: var(--primary-gold);
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            background: rgba(22, 22, 22, 0.9);
-        }
-
-        .card h3 {
-            margin-bottom: 1.2rem;
-            color: var(--primary-gold);
-            font-size: 1.6rem;
-        }
-
-        /* Contact Form */
-        .form-card {
-            background: var(--bg-card);
-            padding: 5rem;
-            border-radius: var(--radius);
-            max-width: 1000px;
-            margin: 0 auto;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 1.3rem;
-            margin-bottom: 1.8rem;
-            background: #0f0f0f;
-            border: 1px solid rgba(255,255,255,0.08);
-            color: #fff;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--primary-gold);
-            outline: none;
-        }
-
-        /* Footer */
-        footer {
-            padding: 6rem 0 4rem;
-            background: #050505;
-            border-top: 2px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        .footer-logo {
-            height: 100px;
-            margin-bottom: 2rem;
-            object-fit: contain;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .nav-links { gap: 1.5rem; }
-            .hero-content h1 { font-size: 3.5rem; }
-            nav { height: 100px; }
-            .logo-img { height: 75px; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100px;
-                left: 0;
-                width: 100%;
-                background: var(--bg-dark);
-                flex-direction: column;
-                padding: 4rem 2rem;
-                text-align: center;
-                border-bottom: 2px solid var(--primary-gold);
-            }
-            .nav-links.active { display: flex; }
-            .mobile-toggle { display: block; }
-            nav { height: 90px; }
-            .logo-img { height: 65px; }
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/style.css"/>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#home" class="logo-container" onclick="navigate('home')">
-                    <!-- Increased height for a more prominent logo -->
-                    <img src="logo.svg" alt="Gold UZB LLC Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <!-- Text fallback styled to look like the referenced professional logo -->
-                    <div style="display:none; text-align: left;">
-                        <span class="brand-font" style="font-size: 1.8rem; color: #fff; font-weight: 800; line-height: 1;">GOLD <span style="color: var(--primary-gold)">UZB</span></span>
-                        <div style="height: 2px; background: var(--gold-gradient); width: 100%; margin-top: 4px;"></div>
-                        <span style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 3px; text-transform: uppercase;">Logistics Solutions</span>
-                    </div>
-                </a>
-
-                <div class="nav-links" id="navLinks">
-                    <a href="#home" onclick="navigate('home')" class="nav-item active">Home</a>
-                    <a href="#about" onclick="navigate('about')" class="nav-item">About</a>
-                    <a href="#services" onclick="navigate('services')" class="nav-item">Services</a>
-                    <a href="#fleet" onclick="navigate('fleet')" class="nav-item">Fleet</a>
-                    <a href="#careers" onclick="navigate('careers')" class="nav-item">Careers</a>
-                    <a href="#contact" onclick="navigate('contact')" class="nav-item">Contact</a>
+<header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html">
+                <img src="static/image/logo.png" alt="Gold UZB LLC Logo"
+                     onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"/>
+                <div class="logo-fallback" id="logoFallback">
+                    <div class="top">GOLD <span style="color:var(--gold)">UZB</span></div>
+                    <div class="line"></div>
+                    <div class="sub">Logistics Solutions</div>
                 </div>
+            </a>
 
-                <button class="mobile-toggle" id="menuBtn">☰</button>
-            </nav>
-        </div>
-    </header>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item active">Home</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="careers.html" class="nav-item">Careers</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
 
-    <!-- HOME SECTION -->
-    <section id="home" class="active">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero-section">
         <div class="container">
-            <div class="hero-content">
-                <h1>Gold Standard <br> Dispatching Solutions</h1>
+            <div class="hero">
+                <h1>Gold UZB LLC</h1>
+                <div class="hero-sub">Reliable Freight Solutions Across the United States</div>
                 <p>
-                    Gold UZB LLC provides elite dispatching services designed for owner-operators and fleets who demand excellence, transparency, and maximum profitability.
+                    With 24/7 support, strong broker relationships, and disciplined operations,
+                    our team ensures every shipment moves safely, efficiently, and on time.
                 </p>
-                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                    <a href="#contact" onclick="navigate('contact')" class="btn btn-gold">Join Our Fleet</a>
-                    <a href="#services" onclick="navigate('services')" class="btn btn-outline">Explore Services</a>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-gold">Join Our Fleet</a>
+                    <a href="services.html" class="btn btn-outline">Explore Services</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Mission</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: center;">
-                <div style="background: var(--bg-card); padding: 4rem; border-radius: var(--radius); border-left: 8px solid var(--primary-gold);">
-                    <h3 style="color: #fff; margin-bottom: 2rem;">A Legacy of Success in Freight</h3>
-                    <p style="margin-bottom: 2rem; font-size: 1.2rem; color: var(--text-light);">Gold UZB LLC stands at the intersection of technology and industry expertise. Our dispatchers are trained to think like business owners, focusing not just on the next load, but on your overall business sustainability.</p>
-                    <p>We pride ourselves on 24/7 availability and direct communication. When you drive with Gold UZB, you're never alone on the road.</p>
-                </div>
-                <div style="text-align: center;">
-                    <div style="display: inline-block; padding: 3rem; border: 3px solid var(--primary-gold); border-radius: 50%; background: var(--accent-glow);">
-                        <span style="font-size: 5rem; font-weight: 800; color: var(--primary-gold);">10+</span>
+    <!-- ✅ NEW ABOUT (image left big, text right, centered) -->
+    <section class="about-split">
+        <div class="about-split-wrap">
+            <!-- LEFT: IMAGE (full) -->
+            <div class="about-split-image" aria-hidden="true"></div>
+
+            <!-- RIGHT: CONTENT -->
+            <div class="about-split-content">
+                <h2>ABOUT GOLD UZB LLC</h2>
+                <div class="divider divider-left"></div>
+
+                <p class="about-split-text">
+                    Professional truck dispatching focused on clear communication,
+                    disciplined planning, and consistent results nationwide.
+                </p>
+
+                <div class="about-split-grid">
+                    <div class="about-split-card">
+                        <h3>OUR MISSION</h3>
+                        <p>Reliable dispatch that helps drivers earn more with stability.</p>
                     </div>
-                    <p style="margin-top: 2rem; font-weight: 700; font-size: 1.6rem; color: #fff; text-transform: uppercase;">Professional Years</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Premium Services</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>Strategic Booking</h3>
-                    <p>We leverage real-time market data to book the highest-paying loads in the most efficient lanes for your specific equipment.</p>
-                </div>
-                <div class="card">
-                    <h3>Expert Negotiation</h3>
-                    <p>Our team doesn't just take the first offer. We push brokers to the limit to ensure you get the rate your hard work deserves.</p>
-                </div>
-                <div class="card">
-                    <h3>Full Admin Support</h3>
-                    <p>From carrier packets to insurance certificates and invoicing, we handle the paperwork so you can focus on safe driving.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLEET SECTION -->
-    <section id="fleet">
-        <div class="container">
-            <div class="section-title">
-                <h2>Equipment Focus</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="grid">
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📦</div>
-                    <h3>Dry Van</h3>
-                    <p>Optimized nationwide routing for 53ft trailers with consistent load volume.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">❄️</div>
-                    <h3>Reefer</h3>
-                    <p>High-precision dispatching for temperature-sensitive cargo and specialized shippers.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">🏗️</div>
-                    <h3>Flatbed</h3>
-                    <p>Specialized handling for heavy-haul, over-dimensional, and construction freight.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAREERS SECTION -->
-    <section id="careers">
-        <div class="container">
-            <div class="section-title">
-                <h2>Grow With Us</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="grid">
-                <div class="card" style="border-top: 6px solid var(--primary-gold);">
-                    <h3>Owner-Operators</h3>
-                    <p>Tired of low rates and bad communication? Switch to Gold UZB and see the difference in your weekly settlement.</p>
-                    <button class="btn btn-gold" style="margin-top: 2.5rem; width: 100%;" onclick="navigate('contact')">Apply Now</button>
-                </div>
-                <div class="card">
-                    <h3>Dispatch Talent</h3>
-                    <p>Join a high-performance office environment with competitive commissions and modern logistics tools.</p>
-                    <button class="btn btn-outline" style="margin-top: 2.5rem; width: 100%;" onclick="navigate('contact')">Join Office</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Request a Quote</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="form-card">
-                <form id="mainContactForm">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="tel" placeholder="Phone Number" required>
+                    <div class="about-split-card">
+                        <h3>OUR VISION</h3>
+                        <p>Be a trusted partner built on integrity and long-term results.</p>
                     </div>
-                    <input type="email" placeholder="Email Address" required>
-                    <select required>
-                        <option value="" disabled selected>Select Your Equipment</option>
-                        <option>53' Dry Van</option>
-                        <option>53' Reefer</option>
-                        <option>Flatbed / Step-Deck</option>
-                        <option>Box Truck (26')</option>
-                        <option>Hotshot</option>
-                        <option>Other / Fleet</option>
-                    </select>
-                    <textarea rows="6" placeholder="Describe your business needs or current lanes..."></textarea>
-                    <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1.2rem; padding: 1.5rem;">Send Inquiry</button>
-                </form>
+
+                    <div class="about-split-card">
+                        <h3>OUR COMMITMENT</h3>
+                        <p>Discipline + precision + 24/7 support on every load.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <section class="preview">
         <div class="container">
-            <!-- Large Footer Logo -->
-            <img src="logo.svg" alt="Gold UZB Footer Logo" class="footer-logo" onerror="this.style.display='none';">
-
-            <p class="brand-font" style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 15px;">Gold UZB LLC</p>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem;">
-                Setting the gold standard in truck dispatching and logistics management across North America.
-            </p>
-
-            <div style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 3rem;">
-                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">Instagram</a>
-                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">Telegram</a>
-                <a href="#" style="color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">LinkedIn</a>
+            <div class="head">
+                <h2>Our Services</h2>
+                <p>Reliable solutions designed to keep freight and trucks moving efficiently.</p>
             </div>
 
-            <p style="font-size: 0.95rem; color: #444; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;">
-                &copy; 2024 Gold UZB LLC. Registered Transportation Management. All rights reserved.
-            </p>
+            <div class="grid">
+                <div class="p-card">
+                    <div class="p-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M3 7h11v7H3z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 10h3l3 3v1h-6z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="7.5" cy="16.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="16.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Dedicated Freight Solutions</h3>
+                    <p>
+                        Strategic load planning and lane discipline to keep your truck profitable and moving.
+                    </p>
+                </div>
+
+                <div class="p-card">
+                    <div class="p-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 12a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 12v3a2 2 0 0 0 2 2h2v-5H6a2 2 0 0 0-2 2z" stroke="currentColor"
+                                  stroke-width="2"/>
+                            <path d="M20 12v3a2 2 0 0 1-2 2h-2v-5h2a2 2 0 0 1 2 2z" stroke="currentColor"
+                                  stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Reliable Support &amp; Operations</h3>
+                    <p>
+                        24/7 support, clear communication, and consistent execution from pickup to delivery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <a href="services.html">View All</a>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Navigation Logic
-        function navigate(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(sec => {
-                sec.classList.remove('active');
-            });
+    <section class="why">
+        <div class="container">
+            <div class="why-head">
+                <h2>Why Choose Gold UZB?</h2>
+                <div class="divider"></div>
+                <p>
+                    More than dispatch — disciplined operations, strong broker relationships, and 24/7 support built for
+                    long-term profitability.
+                </p>
+            </div>
 
-            // Show selected section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 2v20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M17 7.5c0-2-2.2-3.5-5-3.5S7 5.5 7 7.5 9.2 11 12 11s5 1.5 5 3.5S14.8 18 12 18s-5-1.5-5-3.5"
+                                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Competitive Pay</h3>
+                    <p>Strong rates, smart lane planning, and performance-focused execution to keep your truck
+                        profitable.</p>
+                </div>
 
-            // Update Nav item active state
-            document.querySelectorAll('.nav-item').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('onclick').includes(`'${sectionId}'`)) {
-                    link.classList.add('active');
-                }
-            });
+                <div class="why-card">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 2 20 6v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4Z"
+                                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Always available for dispatch updates, check calls, ELD help, and problem-solving on the
+                        road.</p>
+                </div>
 
-            // Close mobile menu if open
-            document.getElementById('navLinks').classList.remove('active');
+                <div class="why-card">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5Z"
+                                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Home Time</h3>
+                    <p>Flexible schedules with lanes that support regular home-time options when you need it.</p>
+                </div>
 
-            // Scroll to top smoothly
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+                <div class="why-card">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M8 2 5 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 2 19 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 2v4M12 10v4M12 18v4" stroke="currentColor" stroke-width="2"
+                                  stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Dedicated Lanes</h3>
+                    <p>Disciplined lane strategy that reduces deadhead and keeps your weekly plan stable.</p>
+                </div>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.getElementById('navLinks');
+                <div class="why-card is-featured">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M8 12 6.5 10.5a3 3 0 0 1 0-4.2l.6-.6a3 3 0 0 1 4.2 0L12 6.4l.7-.7a3 3 0 0 1 4.2 0l.6.6a3 3 0 0 1 0 4.2L16 12"
+                                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                            <path d="M9 13.5 11 15.5a2 2 0 0 0 2.8 0L15 14.3" stroke="currentColor" stroke-width="2"
+                                  stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Relationships</h3>
+                    <p>Strong broker relationships and professional communication to protect your time and rate.</p>
+                </div>
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+                <div class="why-card">
+                    <div class="why-ico">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 21s-7-4.5-9-9a5.5 5.5 0 0 1 9-6 5.5 5.5 0 0 1 9 6c-2 4.5-9 9-9 9Z"
+                                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Clear communication, planning, and support that helps you drive steady without chaos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
-        // Form Submission Handler
-        document.getElementById('mainContactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Your request has been sent! One of our senior dispatchers will reach out to you within the next hour.');
-            e.target.reset();
-        });
+<footer class="footer-noor">
+    <div class="container f-wrap">
+        <div class="f-left">
+            <img src="static/image/logo.png" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
+            <p>Your trusted logistics partner providing reliable transportation solutions across the nation.</p>
+        </div>
 
-        // Handle URL Hash on load for deep linking
-        window.addEventListener('load', () => {
-            const hash = window.location.hash.replace('#', '');
-            if (hash) {
-                navigate(hash);
-            }
-        });
-    </script>
+        <div class="f-right">
+            <div class="f-title">Get In Touch</div>
+
+            <div class="f-cards">
+                <div class="fcard">
+                    <div class="ficon b">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 22s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="currentColor"
+                                  stroke-width="2"/>
+                            <path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor"
+                                  stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="ftitle">Office Address</div>
+                        <div class="fsub">1 N Commerce Park Dr Suite 124,<br/>Cincinnati, OH 45215</div>
+                    </div>
+                </div>
+
+                <div class="fcard">
+                    <div class="ficon o">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor"
+                                  stroke-width="2"/>
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="ftitle">Office Hours</div>
+                        <div class="fsub">Monday – Sunday<br/>8:00 AM – 6:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="fcard">
+                    <div class="ficon g">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1A19.5 19.5 0 0 1 3.2 11.8 19.8 19.8 0 0 1 .1 3.2 2 2 0 0 1 2.1 1h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.5 2.1L6 8.4a16 16 0 0 0 9.6 9.6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.5.6A2 2 0 0 1 22 16.9Z"
+                                  stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="ftitle">Phone Number</div>
+                        <div class="fsub">(216) 329-8151</div>
+                    </div>
+                </div>
+
+                <div class="fcard">
+                    <div class="ficon p">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 4h16v16H4V4Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="ftitle">Email</div>
+                        <div class="fsub">dispatch@golduzb.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="static/js/main.js"></script>
 </body>
 </html>

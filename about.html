@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Gold UZB LLC</title>
+  <title>About Us | Gold UZB LLC</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="static/css/style.css"/>
+  <script src="static/js/main.js" defer></script>
 </head>
 <body>
 
@@ -16,7 +18,7 @@
   <div class="container">
     <nav>
       <a class="logo" href="index.html">
-        <img src="static/image/logo.svg" alt="Gold UZB LLC Logo"
+        <img src="static/image/logo.png" alt="Gold UZB LLC Logo"
              onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"/>
         <div class="logo-fallback" id="logoFallback">
           <div class="top">GOLD <span style="color:var(--gold)">UZB</span></div>
@@ -38,39 +40,99 @@
   </div>
 </header>
 
-<main class="section-pad">
-  <div class="container">
-    <div class="title">
-      <h2>Our Mission</h2>
-      <div class="divider"></div>
-    </div>
+<main>
+  <section class="about-simple">
+    <div class="container about-simple-wrap">
+      <div class="about-simple-head">
+        <h1>ABOUT US</h1>
+        <div class="hero-sub">RELIABLE TRUCKING OPERATIONS IN THE USA</div>
 
-    <div class="about">
-      <div class="about-box">
-        <h3>A Legacy of Success in Freight</h3>
-        <p style="margin-bottom:1.2rem">
-          Gold UZB LLC stands at the intersection of technology and industry expertise.
-          Our dispatchers are trained to think like business owners—focusing on long-term profitability.
-        </p>
-        <p>
-          We pride ourselves on 24/7 availability and direct communication. When you drive with Gold UZB,
-          you're never alone on the road.
-        </p>
+        <!-- Desktop (full text) -->
+        <div class="about-text about-text--desktop">
+          <p>
+            Gold Uzb LLC is a U.S.-based trucking company focused on professional operations, driver support, and consistent performance.
+            We operate with a modern and organized workflow designed to support drivers and meet industry standards.
+          </p>
+          <p>
+            Our company is built on clear communication, reliable dispatch, and transparent working conditions.
+            We believe that trust is earned through daily operations — not promises.
+          </p>
+        </div>
+
+        <!-- Mobile (short text) -->
+        <div class="about-text about-text--mobile">
+          <p>
+            Gold UZB LLC provides professional trucking operations with clear dispatch, reliable support, and consistent results nationwide.
+          </p>
+        </div>
       </div>
 
-      <div class="stat">
-        <div class="ring"><span>10+</span></div>
-        <p>Professional Years</p>
+      <div class="about-simple-cards">
+
+        <div class="about-simple-card">
+          <div class="why-ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Driver-Focused Operations</h3>
+          <p>
+            We work closely with our drivers to ensure smooth dispatch, clear load details, and responsive support.
+            Our goal is to create a working environment where drivers feel respected, informed, and supported on every trip.
+          </p>
+        </div>
+
+        <div class="about-simple-card">
+          <div class="why-ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Reliability &amp; Efficiency</h3>
+          <p>
+            Gold Uzb LLC operates with structured dispatch processes and real-time communication to minimize downtime and maximize efficiency.
+            Every load is handled with attention to timing, route planning, and driver convenience.
+          </p>
+        </div>
+
+        <div class="about-simple-card">
+          <div class="why-ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Professional Standards</h3>
+          <p>
+            We follow U.S. trucking industry standards and operate with a compliance-first mindset.
+            Safety, documentation accuracy, and operational discipline are part of our daily workflow.
+          </p>
+        </div>
+
+        <div class="about-simple-card">
+          <div class="why-ico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 3v18h18M18 9l-5-5-4 4-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Long-Term Growth Approach</h3>
+          <p>
+            We are focused on steady, controlled growth rather than rapid expansion.
+            This allows us to maintain quality operations and build long-term relationships with drivers and partners.
+          </p>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 </main>
 
-<!-- footer shu yerda ham xuddi index.html dagidek -->
 <footer class="footer-noor">
   <div class="container f-wrap">
     <div class="f-left">
-      <img src="static/image/logo.svg" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
+      <img src="static/image/logo.png" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
       <p>Your trusted logistics partner providing reliable transportation solutions across the nation.</p>
     </div>
 
@@ -78,7 +140,6 @@
       <div class="f-title">Get In Touch</div>
 
       <div class="f-cards">
-        <!-- footer cards (xuddi index.html dagi) -->
         <div class="fcard">
           <div class="ficon b">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -135,6 +196,5 @@
   </div>
 </footer>
 
-<script src="static/js/main.js"></script>
 </body>
 </html>

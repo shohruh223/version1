@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | Gold UZB LLC</title>
+  <title>Our Services | Gold UZB LLC</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="static/css/style.css"/>
+  <script src="static/js/main.js" defer></script>
 </head>
 <body>
 
@@ -16,7 +18,7 @@
   <div class="container">
     <nav>
       <a class="logo" href="index.html">
-        <img src="static/image/logo.svg" alt="Gold UZB LLC Logo"
+        <img src="static/image/logo.png" alt="Gold UZB LLC Logo"
              onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"/>
         <div class="logo-fallback" id="logoFallback">
           <div class="top">GOLD <span style="color:var(--gold)">UZB</span></div>
@@ -38,42 +40,116 @@
   </div>
 </header>
 
-<main class="section-pad">
-  <div class="container">
-    <div class="title">
-      <h2>Premium Services</h2>
-      <div class="divider"></div>
-    </div>
+<main>
+  <section class="services-page">
+    <div class="container">
 
-    <div class="cards">
-      <div class="card">
-        <h3>Strategic Booking</h3>
-        <p>We use real-time market data to book the highest-paying loads in efficient lanes for your equipment.</p>
+      <div class="page-header">
+        <h1>OUR SERVICES</h1>
+        <p>Comprehensive and professional solutions tailored to maximize your fleet's potential and ensure steady growth.</p>
       </div>
-      <div class="card">
-        <h3>Expert Negotiation</h3>
-        <p>We negotiate hard with brokers to secure the rate your work deserves—without wasting your time.</p>
+
+      <!-- SERVICE 1 -->
+      <div class="service-row">
+        <div class="s-content">
+          <div class="s-head">
+            <div class="s-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 10h11v7H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M16 13h3l3 3v1h-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="8.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18.5" cy="18.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+                <path d="M11 6h4v4h-4z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h2>Dispatch <span>Solutions</span></h2>
+          </div>
+          <p class="s-desc">Efficient management to keep freight moving smoothly and on schedule.</p>
+
+          <ul class="s-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 load coordination and instant booking</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct communication with carriers and shippers</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Optimized routing to reduce fuel costs</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital document handling (BOL, POD, invoices)</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>After-hours support for urgent dispatch needs</li>
+          </ul>
+        </div>
+
+        <div class="s-image">
+          <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1000&auto=format&fit=crop" alt="Dispatch Service Office">
+        </div>
       </div>
-      <div class="card">
-        <h3>Full Admin Support</h3>
-        <p>Carrier packets, insurance docs, invoicing—handled. You focus on safe driving.</p>
+
+      <!-- SERVICE 2 -->
+      <div class="service-row">
+        <div class="s-content">
+          <div class="s-head">
+            <div class="s-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2>Fleet <span>Management</span></h2>
+          </div>
+          <p class="s-desc">Comprehensive tools and support to maximize fleet performance.</p>
+
+          <ul class="s-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-time GPS tracking and fleet visibility</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Preventive maintenance and vehicle inspections</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fuel and expense management solutions</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Driver performance tracking and guidance</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Compliance audits and safety checks</li>
+          </ul>
+        </div>
+
+        <div class="s-image">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1000&auto=format&fit=crop" alt="Fleet of Trucks">
+        </div>
       </div>
+
+      <!-- SERVICE 3 -->
+      <div class="service-row">
+        <div class="s-content">
+          <div class="s-head">
+            <div class="s-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2>Safety <span>& Compliance</span></h2>
+          </div>
+          <p class="s-desc">Proactive programs to protect your business and team.</p>
+
+          <ul class="s-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Regulatory compliance monitoring (DOT, HOS, CSA)</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Driver qualification and certification management</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Drug and alcohol testing programs</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Hours-of-Service (HOS) adherence support</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Risk management and safety improvement strategies</li>
+          </ul>
+        </div>
+
+        <div class="s-image">
+          <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=1000&auto=format&fit=crop" alt="Safety Check on Road">
+        </div>
+      </div>
+
     </div>
-  </div>
+  </section>
 </main>
 
-<!-- footer: index.html dagisini copy/paste qiling -->
 <footer class="footer-noor">
   <div class="container f-wrap">
     <div class="f-left">
-      <img src="static/image/logo.svg" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
+      <img src="static/image/logo.png" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
       <p>Your trusted logistics partner providing reliable transportation solutions across the nation.</p>
     </div>
 
     <div class="f-right">
       <div class="f-title">Get In Touch</div>
+
       <div class="f-cards">
-        <!-- footer cards (xuddi index.html dagi) -->
         <div class="fcard">
           <div class="ficon b">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -130,6 +206,5 @@
   </div>
 </footer>
 
-<script src="static/js/main.js"></script>
 </body>
 </html>

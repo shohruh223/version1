@@ -18,12 +18,36 @@ document.addEventListener('click', (e) => {
   toggleMenu(false);
 });
 
-// Form demo (faqat contact page’da bo‘lsa ishlaydi)
-const form = document.getElementById('mainContactForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
+// Reusable toast message
+function showToast(message) {
+  const msgBox = document.createElement('div');
+  msgBox.style.cssText =
+    'position:fixed; top:20px; right:20px; background:var(--gold-grad); color:#000; padding:15px 25px; border-radius:8px; z-index:9999; font-weight:800; box-shadow:0 10px 25px rgba(184, 134, 11, 0.3); font-family:Montserrat, sans-serif; transition: opacity 0.3s ease;';
+  msgBox.textContent = message;
+  document.body.appendChild(msgBox);
+
+  setTimeout(() => {
+    msgBox.style.opacity = '0';
+    setTimeout(() => msgBox.remove(), 300);
+  }, 3500);
+}
+
+// Contact form (contact.html)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert("Your request has been sent! Our dispatcher will reach out soon.");
+    showToast("Your request has been sent! Our team will reach out to you shortly.");
+    e.target.reset();
+  });
+}
+
+// Optional: older/demo form id (if any other page has it)
+const mainContactForm = document.getElementById('mainContactForm');
+if (mainContactForm) {
+  mainContactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    showToast("Your request has been sent! Our dispatcher will reach out soon.");
     e.target.reset();
   });
 }

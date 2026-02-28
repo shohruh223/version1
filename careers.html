@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="static/css/style.css"/>
+  <script src="static/js/main.js" defer></script>
 </head>
 <body>
 
@@ -16,7 +18,7 @@
   <div class="container">
     <nav>
       <a class="logo" href="index.html">
-        <img src="static/image/logo.svg" alt="Gold UZB LLC Logo"
+        <img src="static/image/logo.png" alt="Gold UZB LLC Logo"
              onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"/>
         <div class="logo-fallback" id="logoFallback">
           <div class="top">GOLD <span style="color:var(--gold)">UZB</span></div>
@@ -38,41 +40,85 @@
   </div>
 </header>
 
-<main class="section-pad">
-  <div class="container">
-    <div class="title">
-      <h2>Grow With Us</h2>
-      <div class="divider"></div>
-    </div>
+<main>
+  <section class="careers-page">
+    <div class="container">
 
-    <div class="cards">
-      <div class="card" style="border-top:6px solid var(--gold)">
-        <h3>Owner-Operators</h3>
-        <p>Tired of low rates and bad communication? Switch to Gold UZB and feel the difference.</p>
-        <a href="contact.html" class="btn btn-gold" style="margin-top:2.2rem;width:100%">Apply Now</a>
+      <div class="page-header">
+        <h1>DRIVER OPTIONS</h1>
+        <p>Join a team that respects your independence and values your hard work.</p>
       </div>
 
-      <div class="card">
-        <h3>Dispatch Talent</h3>
-        <p>Join a high-performance team with modern logistics tools and competitive commissions.</p>
-        <a href="contact.html" class="btn btn-outline" style="margin-top:2.2rem;width:100%">Join Office</a>
+      <div class="careers-banner">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop" alt="">
+      </div>
+
+      <div class="job-grid">
+
+        <div class="job-card">
+          <h2 class="job-title">Owner Operator</h2>
+          <div class="job-tags">
+            <span class="tag tag-blue">Contract</span>
+            <span class="tag tag-yellow">Nationwide</span>
+          </div>
+          <ul class="job-features">
+            <li>Direct access to broker loads</li>
+            <li>Dispatch support when needed</li>
+            <li>Rate confirmation & paperwork handling</li>
+            <li>Compliance-first operations</li>
+            <li>Clear and transparent cooperation</li>
+          </ul>
+          <a href="contact.html" class="btn-apply">Apply for This Position</a>
+        </div>
+
+        <div class="job-card">
+          <h2 class="job-title">Lease Driver</h2>
+          <div class="job-tags">
+            <span class="tag tag-blue">Lease Rent</span>
+            <span class="tag tag-yellow">Lease Purchase</span>
+          </div>
+          <ul class="job-features">
+            <li>Structured lease program</li>
+            <li>Load and dispatch coordination</li>
+            <li>Broker communication support</li>
+            <li>Compliance and documentation assistance</li>
+            <li>24/7 operational support</li>
+          </ul>
+          <a href="contact.html" class="btn-apply">Apply for This Position</a>
+        </div>
+
+        <div class="job-card">
+          <h2 class="job-title">Company Driver</h2>
+          <div class="job-tags">
+            <span class="tag tag-blue">Percentage from Gross</span>
+            <span class="tag tag-yellow">Cost Per Mile</span>
+          </div>
+          <ul class="job-features">
+            <li>Consistent load planning</li>
+            <li>Organized and clear dispatch communication</li>
+            <li>24/7 driver support</li>
+            <li>Compliance-focused operations</li>
+            <li>Transparent pay structure</li>
+          </ul>
+          <a href="contact.html" class="btn-apply">Apply for This Position</a>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 </main>
 
-<!-- footer: index.html dagisini copy/paste qiling -->
 <footer class="footer-noor">
   <div class="container f-wrap">
     <div class="f-left">
-      <img src="static/image/logo.svg" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
+      <img src="static/image/logo.png" alt="Gold UZB Logo" class="f-logo" onerror="this.style.display='none';"/>
       <p>Your trusted logistics partner providing reliable transportation solutions across the nation.</p>
     </div>
 
     <div class="f-right">
       <div class="f-title">Get In Touch</div>
+
       <div class="f-cards">
-        <!-- footer cards (xuddi index.html dagi) -->
         <div class="fcard">
           <div class="ficon b">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -129,6 +175,5 @@
   </div>
 </footer>
 
-<script src="static/js/main.js"></script>
 </body>
 </html>

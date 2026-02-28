@@ -34,11 +34,39 @@ function showToast(message) {
 
 // Contact form (contact.html)
 const contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    showToast("Your request has been sent! Our team will reach out to you shortly.");
-    e.target.reset();
+
+    const fullName = document.getElementById('fullName')?.value.trim();
+    const emailAddr = document.getElementById('emailAddr')?.value.trim();
+    const phoneNum = document.getElementById('phoneNum')?.value.trim();
+
+    if (!fullName || !emailAddr || !phoneNum) {
+      showToast("Please fill out all required fields.");
+      return;
+    }
+
+    try {
+      const res = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, emailAddr, phoneNum })
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        showToast("Something went wrong. Please try again.");
+        return;
+      }
+
+      showToast("Sent ✅ Our team will reach out shortly.");
+      contactForm.reset();
+    } catch {
+      showToast("Network error. Please try again.");
+    }
   });
 }
 
